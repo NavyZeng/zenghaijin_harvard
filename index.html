@@ -2,127 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Haijin Zeng | Research Fellow — Harvard Medical School</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haijin Zeng | Harvard Medical School</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-  <!-- Top site bar -->
-  <div class="site-bar">
-    <div class="site-bar-inner">
-      <div>
-        <div class="site-bar-title">Harvard Medical School</div>
-        <div class="site-bar-subtitle">
-          Psychiatry Neuroimaging Laboratory · Brigham and Women’s Hospital
-        </div>
-      </div>
+<!-- Top Red Bar -->
+<div class="site-bar">
+  <div class="site-bar-inner">
+    <div class="site-bar-title">Harvard Medical School</div>
+    <div class="site-bar-subtitle">Brigham and Women’s Hospital</div>
+  </div>
+</div>
+
+<!-- Header with Harvard Shield -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="shield">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/29/Harvard_shield_wreath.svg" alt="Harvard Shield">
+    </div>
+
+    <div class="header-text">
+      <h1 class="header-name">Haijin Zeng, Ph.D.</h1>
+      <div class="header-title">Postdoctoral Research Fellow</div>
+      <p class="header-affil">
+        Psychiatry Neuroimaging Laboratory (PNL), Brigham and Women’s Hospital,  
+        <br>Harvard Medical School
+      </p>
     </div>
   </div>
+</header>
 
-  <!-- Header: shield + name + title -->
-  <header class="page-header">
-    <div class="page-header-inner">
-      <div class="shield">
-        <!-- Put harvard.png into assets/img/ if you want a shield logo -->
-        <img src="assets/img/harvard.png" alt="Harvard Shield">
-      </div>
-      <div class="header-text">
-        <h1 class="header-name">Haijin Zeng</h1>
-        <p class="header-title">Research Fellow, Harvard Medical School</p>
-        <p class="header-affil">
-          Psychiatry Neuroimaging Laboratory (PNL), Brigham and Women’s Hospital<br>
-          Former Ph.D. candidate, imec &amp; Ghent University
-        </p>
-      </div>
+<!-- Main Content -->
+<div class="main-wrapper">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="profile-photo">
+      <img src="assets/img/profile.jpg" alt="Haijin Zeng">
     </div>
-  </header>
 
-  <!-- Main layout -->
-  <main class="main-wrapper">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="profile-photo">
-        <!-- You can replace this with a professional portrait later -->
-        <img src="assets/img/doraemon.png" alt="Profile photo">
-      </div>
+    <div class="sidebar-block">
+      <div class="sidebar-label">Contact</div>
+      <p>Email: <a href="mailto:haijin_zeng@hms.harvard.edu">haijin_zeng@hms.harvard.edu</a></p>
+      <p>GitHub: <a href="https://github.com/NavyZeng" target="_blank">NavyZeng</a></p>
+      <p>Google Scholar: <a href="https://scholar.google.com/citations?user=e9f3XqcAAAAJ" target="_blank">Profile</a></p>
+    </div>
 
-      <div class="sidebar-block">
-        <div class="sidebar-label">Contact</div>
-        <p>Email: haijin.zeng@imec.be</p>
-        <!-- If you have HMS/BWH email, add here manually -->
-        <!-- <p>Harvard Email: xxx@bwh.harvard.edu</p> -->
-      </div>
+    <div class="sidebar-block">
+      <div class="sidebar-label">Research Areas</div>
+      <ul class="tag-list">
+        <li>Computational Imaging</li>
+        <li>Neuroimaging</li>
+        <li>MRI / fMRI</li>
+        <li>Tensors & Optimization</li>
+        <li>Medical Image Reconstruction</li>
+      </ul>
+    </div>
 
-      <div class="sidebar-block">
-        <div class="sidebar-label">Links</div>
-        <p>
-          <a href="https://scholar.google.com/citations?user=e9f3XqcAAAAJ" target="_blank">Google Scholar</a><br>
-          <a href="https://www.imec-int.com/en" target="_blank">imec</a><br>
-          <a href="https://www.ugent.be/en" target="_blank">Ghent University</a>
-        </p>
-      </div>
+  </aside>
 
-      <div class="sidebar-block">
-        <div class="sidebar-label">Research Areas</div>
-        <ul class="tag-list">
-          <li>Computational imaging</li>
-          <li>Hyperspectral imaging</li>
-          <li>Tensor methods</li>
-          <li>Image restoration</li>
-          <li>Neuroimaging</li>
-        </ul>
-      </div>
+  <!-- Main body -->
+  <main class="content">
 
-      <div class="sidebar-block">
-        <div class="sidebar-label">Location</div>
-        <p>Boston, MA, USA<br>Ghent, Belgium</p>
-      </div>
-    </aside>
-
-    <!-- Main content -->
-    <div class="content">
-
-      <!-- About / Bio -->
-      <section id="bio">
-        <h2>About</h2>
-        <p>
-          I am a Research Fellow at <strong>Harvard Medical School</strong>, based in the
-          <strong>Psychiatry Neuroimaging Laboratory (PNL)</strong> at
-          <strong>Brigham and Women’s Hospital</strong>. My work focuses on developing
-          computational imaging and machine learning methods for large-scale neuroimaging
-          and biomedical data.
-        </p>
-        <p>
-          I completed my Ph.D. at <strong>imec &amp; Ghent University</strong>, where I worked
-          with Prof. Wilfried Philips and Prof. Hiep Luong on tensor-based models, hyperspectral
-          imaging, and mobile intelligent photography. My long-term goal is to build robust,
-          data-efficient imaging algorithms that translate into clinically meaningful tools for
-          neuroscience and medicine.
-        </p>
-      </section>
-
-      <!-- Research -->
-      <section id="research">
-        <h2>Research</h2>
-        <p>
-          My research lies at the intersection of computational imaging, inverse problems,
-          and machine learning, with applications in hyperspectral imaging, camera pipelines,
-          and neuroimaging.
-        </p>
-        <ul>
-          <li><strong>Computational Imaging:</strong> snapshot spectral imaging (MSFA/SCI),
-            MRI reconstruction, and camera image signal processing for Bayer &amp; non-Bayer sensors.</li>
-          <li><strong>Tensor Models &amp; Optimization:</strong> low-rank and nonconvex tensor
-            representations, deep unfolding networks, and plug-and-play priors.</li>
-          <li><strong>Hyperspectral Imaging &amp; Restoration:</strong> denoising, demosaicing,
-            compressive sensing, and diffusion/diffusion-inspired generative models.</li>
-          <li><strong>Neuroimaging:</strong> quantitative imaging and reconstruction methods
-            for structural and functional MRI, and integration with advanced computational
-            imaging pipelines.</li>
-        </ul>
-      </section>
+    <!-- Bio -->
+    <section>
+      <h2>Biography</h2>
+      <p>
+        I am a Postdoctoral Research Fellow at the 
+        <strong>Psychiatry Neuroimaging Laboratory (PNL)</strong>,  
+        <strong>Brigham and Women’s Hospital</strong>, and  
+        <strong>Harvard Medical School</strong>.  
+      </p>
+      <p>
+        I received my Ph.D. in Engineering from imec & Ghent University, 
+        where I was awarded the <strong>imec PhD Excellence Award</strong>.
+        My work bridges computational imaging, deep learning, spectral imaging, 
+        and large-scale neuroimaging analysis.
+      </p>
+      <p>
+        My current research focuses on developing robust computational models 
+        for structural and functional MRI, tensor-based modeling, large-scale 
+        histology-MRI integration, and AI-driven imaging biomarkers for brain injury, 
+        coma recovery, and neurodegeneration.
+      </p>
+    </section>
 
       <!-- Publications -->
       <section id="publications">
