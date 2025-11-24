@@ -23,12 +23,11 @@ a {
   color: var(--harvard-crimson);
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
 
-/* Top bar */
+/* TOP BAR (Harvard style, enlarged) */
 .site-bar {
   border-bottom: 1px solid var(--border-light);
   background: #ffffff;
@@ -37,24 +36,24 @@ a:hover {
 .site-bar-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 20px 20px;   /* Larger */
 }
 
 .site-bar-title {
   font-family: Georgia, serif;
-  font-size: 0.95rem;           /* FIXED */
-  font-weight: 600;
+  font-size: 1.45rem;   /* BIGGER */
+  font-weight: 700;
   color: var(--harvard-crimson);
   letter-spacing: 0.03em;
 }
 
 .site-bar-subtitle {
-  font-size: 0.75rem;           /* FIXED */
-  color: #555;
-  margin-top: 2px;
+  font-size: 1.05rem;
+  color: #444;
+  margin-top: 4px;
 }
 
-/* Header */
+/* HEADER (with larger shield) */
 .page-header {
   border-bottom: 1px solid var(--border-light);
   background: #ffffff;
@@ -63,17 +62,16 @@ a:hover {
 .page-header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 18px 20px;           /* FIXED spacing */
+  padding: 35px 20px;          /* Increased height */
   display: flex;
   align-items: center;
-  gap: 14px;                    /* FIXED tighter gap */
+  gap: 30px;                   /* Smooth spacing */
 }
 
 .shield img {
-  width: 50px;                  /* FIXED Harvard size */
+  width: 110px;                /* Harvard-realistic size */
   height: auto;
   display: block;
-  margin-top: 4px;
 }
 
 .header-text {
@@ -82,34 +80,36 @@ a:hover {
 
 .header-name {
   font-family: Georgia, serif;
-  font-size: 2rem;
+  font-size: 2.6rem;           /* Balanced with the shield */
   font-weight: 600;
   color: var(--harvard-dark);
   margin: 0;
 }
 
 .header-title {
-  color: var(--harvard-crimson);
+  font-size: 1.25rem;
   font-weight: 600;
-  margin: 4px 0;
+  color: var(--harvard-crimson);
+  margin-top: 8px;
 }
 
 .header-affil {
-  color: #666;
-  margin: 4px 0;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 6px;
 }
 
-/* Main layout */
+/* MAIN GRID */
 .main-wrapper {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 40px 20px;
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 32px;
+  grid-template-columns: 270px 1fr;
+  gap: 40px;
 }
 
-/* Sidebar */
+/* SIDEBAR */
 .sidebar {
   border-right: 1px solid var(--border-light);
   padding-right: 20px;
@@ -117,49 +117,52 @@ a:hover {
 
 .profile-photo img {
   width: 100%;
-  max-width: 200px;            /* FIXED cleaner size */
-  border: 1px solid var(--border-light);
-  border-radius: 6px;
+  max-width: 240px;         /* Bigger but clean */
   display: block;
-  margin: 0 auto 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  margin: 0 auto 25px;
 }
 
 .sidebar-block {
-  margin-bottom: 20px;
-  font-size: 0.9rem;
+  margin-bottom: 22px;
+  font-size: 0.92rem;
 }
 
 .sidebar-label {
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.76rem;
+  font-weight: 600;
   color: #777;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
-/* Content */
+/* CONTENT */
 .content section {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .content h2 {
   font-family: Georgia, serif;
-  font-size: 1.35rem;
-  margin-bottom: 8px;
-  padding-bottom: 4px;
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
   border-bottom: 1px solid var(--border-light);
 }
 
-/* Publications */
+/* PUBLICATIONS */
 .publications-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .pub-item {
   display: grid;
-  grid-template-columns: 140px 1fr;   /* FIXED balanced column */
-  gap: 16px;
-  padding: 16px 0;
+  grid-template-columns: 160px 1fr;    /* Larger thumbnails */
+  gap: 20px;
+  padding: 20px 0;
   border-top: 1px solid var(--border-light);
 }
 
@@ -169,48 +172,48 @@ a:hover {
 
 .pub-thumb img {
   width: 100%;
-  max-width: 140px;                  /* FIXED consistent size */
-  border: 1px solid var(--border-light);
+  max-width: 160px;                /* Larger */
   border-radius: 4px;
+  border: 1px solid var(--border-light);
 }
 
 .pub-main-title {
   font-weight: 600;
   font-size: 1rem;
   color: var(--harvard-dark);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .pub-authors {
-  font-size: 0.9rem;
-  color: #777;
+  font-size: 0.92rem;
+  color: #666;
 }
 
 .pub-meta {
   font-size: 0.85rem;
   color: #777;
-  margin: 4px 0;
+  margin: 6px 0;
 }
 
 .pub-links a {
-  color: var(--harvard-crimson);
-  margin-right: 8px;
-  font-size: 0.85rem;
+  margin-right: 10px;
   font-weight: 500;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 1px solid var(--border-light);
-  color: #777;
   font-size: 0.85rem;
+  color: var(--harvard-crimson);
 }
 
-/* Responsive */
-@media (max-width: 800px) {
+/* FOOTER */
+.site-footer {
+  margin-top: 50px;
+  padding: 25px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #777;
+  border-top: 1px solid var(--border-light);
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
   .main-wrapper {
     grid-template-columns: 1fr;
   }
@@ -219,5 +222,24 @@ footer {
     border-bottom: 1px solid var(--border-light);
     padding-bottom: 20px;
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .shield img {
+    width: 95px;
+  }
+
+  .profile-photo img {
+    max-width: 200px;
+  }
+
+  .pub-item {
+    grid-template-columns: 1fr;
   }
 }
