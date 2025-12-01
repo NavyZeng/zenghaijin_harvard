@@ -19,69 +19,63 @@ body {
   line-height: 1.55;
 }
 
-/* ============================================================
-   LINKS
-============================================================ */
 a {
   color: var(--harvard-crimson);
   text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
-}
+a:hover { text-decoration: underline; }
 
 /* ============================================================
-   HARVARD.EDU — EXACT HEADER REPLICA
-   https://www.harvard.edu/
+   HARVARD HEADER (balanced version)
 ============================================================ */
 
 .harvard-header {
-  background: #A41034; /* Harvard Crimson */
+  background: #A41034;
   width: 100%;
   color: white;
   border-bottom: 1px solid #7A0019;
 }
 
 .harvard-header-inner {
-  max-width: 1150px; /* Harvard.edu container width */
+  max-width: 1150px;
   margin: 0 auto;
-  padding: 12px 24px;
+  padding: 10px 22px;
   display: flex;
   align-items: center;
-  gap: 20px; /* spacing between shield and wordmark */
+  gap: 16px;
 }
 
-/* Crimson padded box */
+/* Crimson padded shield box */
 .harvard-shield-box {
-  background: #7A0019; /* darker crimson */
-  padding: 6px;        /* Harvard.edu padding */
+  background: #7A0019;
+  padding: 5px;
   border-radius: 4px;
+  height: 45px;
   display: flex;
   align-items: center;
-  height: 58px;        /* EXACT Harvard.edu height */
 }
 
-/* Harvard Shield */
+/* Shield image (balanced size) */
 .harvard-shield-box img {
-  height: 46px; /* EXACT Harvard.edu shield height */
+  height: 34px;
   width: auto;
   display: block;
 }
 
-/* HARVARD UNIVERSITY wordmark */
+/* Larger Harvard wordmark */
 .harvard-wordmark {
   font-family: "Crimson Text", Georgia, serif;
-  font-size: 34px;        /* EXACT Harvard.edu font size */
+  font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  height: 58px;           /* vertically aligned with shield */
+  letter-spacing: 0.04em;
+  height: 45px;
   display: flex;
   align-items: center;
 }
 
 /* ============================================================
-   HARVARD FACULTY-STYLE PROFILE HEADER
+   FACULTY HEADER (below the crimson banner)
 ============================================================ */
 
 .faculty-header {
@@ -96,16 +90,12 @@ a:hover {
   padding: 0 24px;
 }
 
-.faculty-header-text {
-  text-align: left;
-}
-
 .faculty-name {
   font-family: Georgia, serif;
   font-size: 2.4rem;
   font-weight: 600;
-  margin: 0 0 10px 0;
-  color: #2b2b2b;
+  margin-bottom: 10px;
+  color: var(--harvard-dark);
 }
 
 .faculty-title {
@@ -122,7 +112,7 @@ a:hover {
 }
 
 /* ============================================================
-   MAIN LAYOUT GRID
+   MAIN PAGE LAYOUT
 ============================================================ */
 
 .main-wrapper {
@@ -187,9 +177,9 @@ a:hover {
 ============================================================ */
 
 .publications-list {
-  list-style: none;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .pub-item {
@@ -199,7 +189,6 @@ a:hover {
   padding: 20px 0;
   border-top: 1px solid var(--border-light);
 }
-
 .pub-item:last-child {
   border-bottom: 1px solid var(--border-light);
 }
@@ -235,9 +224,7 @@ a:hover {
   font-size: 0.85rem;
   color: var(--harvard-crimson);
 }
-.pub-links a:hover {
-  text-decoration: underline;
-}
+.pub-links a:hover { text-decoration: underline; }
 
 /* ============================================================
    FOOTER
@@ -257,7 +244,6 @@ a:hover {
 ============================================================ */
 
 @media (max-width: 850px) {
-
   .main-wrapper {
     grid-template-columns: 1fr;
   }
@@ -266,30 +252,33 @@ a:hover {
     border-right: none;
     border-bottom: 1px solid var(--border-light);
     padding-bottom: 20px;
-    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 600px) {
 
-  .faculty-name {
-    font-size: 1.9rem;
+  .harvard-wordmark {
+    font-size: 30px;
+    height: 40px;
   }
 
-  .profile-photo img {
-    max-width: 200px;
+  .harvard-shield-box {
+    height: 40px;
+  }
+
+  .harvard-shield-box img {
+    height: 28px;
+  }
+
+  .faculty-name {
+    font-size: 1.9rem;
   }
 
   .pub-item {
     grid-template-columns: 1fr;
   }
 
-  .harvard-wordmark {
-    font-size: 26px;
-  }
-
-  .harvard-shield-box,
-  .harvard-wordmark {
-    height: 46px;
+  .profile-photo img {
+    max-width: 200px;
   }
 }
