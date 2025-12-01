@@ -29,7 +29,7 @@ a:hover {
 
 /* Harvard.edu style top bar */
 .harvard-bar {
-  background: #A41034; /* official Harvard crimson */
+  background: #A41034;
   width: 100%;
   color: #fff;
   border-bottom: 1px solid #7A0019;
@@ -38,54 +38,29 @@ a:hover {
 .harvard-bar-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 6px 20px; /* closer to Harvard.edu */
+  padding: 6px 20px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px; /* smaller spacing like official */
 }
 
-/* Crimson square behind the shield */
+/* Crimson square behind shield — MUCH smaller now */
 .harvard-logo-box {
-  background: #7A0019; /* Harvard.edu darker shade */
-  padding: 4px;        /* smaller, clean */
-  border-radius: 4px;
+  background: #7A0019;
+  padding: 2px;  /* small padding like harvard.edu */
+  border-radius: 3px;
   display: flex;
   align-items: center;
+  height: 26px;  /* enforces the small official height */
 }
 
+/* The actual shield — this is the key fix */
 .harvard-logo-box img {
-  width: 32px;   /* Harvard.edu size ~30–32px */
-  height: auto;
+  height: 22px;   /* Harvard.edu shield height */
+  width: auto;
   display: block;
 }
 
-/* Typography like Harvard.edu */
-.harvard-bar-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-/* Harvard.edu title style */
-.harvard-bar-title {
-  font-family: "Crimson Text", Georgia, serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase; /* same as official site */
-  margin: 0;
-  padding: 0;
-  color: #fff;
-}
-
-/* Subtitle, cleaner + smaller */
-.harvard-bar-subtitle {
-  font-family: "Crimson Text", Georgia, serif;
-  font-size: 0.80rem;
-  opacity: 0.95;
-  margin: 0;
-  padding: 0;
-}
 
 
 /* MAIN GRID */
