@@ -31,56 +31,59 @@ a:hover {
 }
 
 /* ============================================================
-   HARVARD OFFICIAL TOP BANNER
+   HARVARD.EDU — EXACT HEADER REPLICA
+   https://www.harvard.edu/
 ============================================================ */
-.harvard-topbar {
-  width: 100%;
+
+.harvard-header {
   background: #A41034; /* Harvard Crimson */
-  border-bottom: 1px solid #7A0019;
+  width: 100%;
   color: white;
+  border-bottom: 1px solid #7A0019;
 }
 
-.harvard-topbar-inner {
-  max-width: var(--max-width);
+.harvard-header-inner {
+  max-width: 1150px; /* Harvard.edu container width */
   margin: 0 auto;
-  padding: 8px 24px;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px; /* spacing between shield and wordmark */
 }
 
-/* Shield box */
-.harvard-logo-box {
-  background: #7A0019;
-  padding: 3px;
+/* Crimson padded box */
+.harvard-shield-box {
+  background: #7A0019; /* darker crimson */
+  padding: 6px;        /* Harvard.edu padding */
   border-radius: 4px;
-  height: 30px;
   display: flex;
   align-items: center;
+  height: 58px;        /* EXACT Harvard.edu height */
 }
 
-.harvard-logo-box img {
-  height: 24px;  /* OFFICIAL shield height */
+/* Harvard Shield */
+.harvard-shield-box img {
+  height: 46px; /* EXACT Harvard.edu shield height */
   width: auto;
   display: block;
 }
 
-/* Wordmark container */
-.harvard-wordmark-container {
+/* HARVARD UNIVERSITY wordmark */
+.harvard-wordmark {
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 34px;        /* EXACT Harvard.edu font size */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  height: 58px;           /* vertically aligned with shield */
   display: flex;
   align-items: center;
 }
-
-.harvard-wordmark-svg {
-  height: 26px;  /* matches Harvard.edu */
-  width: auto;
-  display: block;
-}
-
 
 /* ============================================================
-   HARVARD FACULTY-STYLE HEADER
+   HARVARD FACULTY-STYLE PROFILE HEADER
 ============================================================ */
+
 .faculty-header {
   background: white;
   border-bottom: 1px solid var(--border-light);
@@ -118,10 +121,10 @@ a:hover {
   line-height: 1.55;
 }
 
-
 /* ============================================================
-   MAIN GRID LAYOUT
+   MAIN LAYOUT GRID
 ============================================================ */
+
 .main-wrapper {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -131,10 +134,10 @@ a:hover {
   gap: 40px;
 }
 
-
 /* ============================================================
    SIDEBAR
 ============================================================ */
+
 .sidebar {
   border-right: 1px solid var(--border-light);
   padding-right: 20px;
@@ -162,10 +165,10 @@ a:hover {
   margin-bottom: 4px;
 }
 
-
 /* ============================================================
-   CONTENT SECTIONS
+   CONTENT AREA
 ============================================================ */
+
 .content section {
   margin-bottom: 40px;
 }
@@ -179,10 +182,10 @@ a:hover {
   border-bottom: 1px solid var(--border-light);
 }
 
-
 /* ============================================================
    PUBLICATIONS
 ============================================================ */
+
 .publications-list {
   list-style: none;
   padding: 0;
@@ -236,10 +239,10 @@ a:hover {
   text-decoration: underline;
 }
 
-
 /* ============================================================
    FOOTER
 ============================================================ */
+
 .site-footer {
   margin-top: 50px;
   padding: 25px;
@@ -249,11 +252,12 @@ a:hover {
   border-top: 1px solid var(--border-light);
 }
 
-
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE DESIGN
 ============================================================ */
+
 @media (max-width: 850px) {
+
   .main-wrapper {
     grid-template-columns: 1fr;
   }
@@ -278,5 +282,14 @@ a:hover {
 
   .pub-item {
     grid-template-columns: 1fr;
+  }
+
+  .harvard-wordmark {
+    font-size: 26px;
+  }
+
+  .harvard-shield-box,
+  .harvard-wordmark {
+    height: 46px;
   }
 }
