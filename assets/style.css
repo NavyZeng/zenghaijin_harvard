@@ -26,55 +26,54 @@ a {
 a:hover { text-decoration: underline; }
 
 /* ============================================================
-   BEAUTIFUL CLEAN HARVARD TOP BAR (WHITE + CRIMSON ACCENTS)
+   CLEAN HARVARD HEADER (BIG SHIELD, SMALL WORDMARK)
 ============================================================ */
 
 .harvard-header {
-  background: #ffffff;                       /* clean white top bar */
+  background: white;
   width: 100%;
   color: var(--harvard-dark);
-  border-bottom: 2px solid #A41034;          /* elegant crimson underline */
+  border-bottom: 2px solid #A41034;   /* subtle crimson accent */
 }
 
 .harvard-header-inner {
   max-width: 1150px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
-  gap: 18px;                                  /* balanced spacing */
+  gap: 16px;
 }
 
-/* Shield container */
+/* LARGE SHIELD — NO BORDER, NO FRAME */
 .harvard-shield-box {
-  background: white;
-  padding: 4px;
-  border: 2px solid #A41034;                  /* subtle Harvard frame */
-  border-radius: 6px;
-  height: 48px;
+  background: white !important;
+  padding: 0 !important;
+  border: none !important;
+  height: 56px;                     /* increased size */
   display: flex;
   align-items: center;
 }
 
-/* Shield size */
 .harvard-shield-box img {
-  height: 36px;                                /* elegant shield */
+  height: 56px;                    /* larger shield */
   width: auto;
   display: block;
 }
 
-/* Wordmark */
+/* SMALLER WORDMARK — LOWER THAN SHIELD */
 .harvard-wordmark {
   font-family: "Crimson Text", Georgia, serif;
-  font-size: 42px;                             /* visually dominant */
+  font-size: 30px;                 /* smaller than shield */
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.035em;
-  height: 48px;
+  letter-spacing: 0.03em;
+  color: var(--harvard-dark);
   display: flex;
   align-items: center;
-  color: var(--harvard-dark);
+  padding-top: 4px;                /* visually centered */
 }
+
 
 /* ============================================================
    FACULTY HEADER (Name + Position + Affiliations)
