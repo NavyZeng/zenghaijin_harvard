@@ -47,22 +47,23 @@ a:hover { text-decoration: underline; }
 }
 
 /* Large Harvard shield (dominant element) */
+/* Top Harvard.edu Header — refined sizes */
 .harvard-shield img {
-  height: 60px;        /* Harvard.edu-scale size */
+  height: 48px;     /* smaller Harvard logo */
   width: auto;
   display: block;
 }
 
-/* Harvard wordmark (smaller than shield) */
 .harvard-wordmark {
   font-family: var(--harvard-serif);
-  font-size: 34px;
+  font-size: 30px;                 /* slightly smaller text */
   font-weight: 700;
-  letter-spacing: 0.015em;
-  color: var(--harvard-dark);
+  letter-spacing: 0.02em;
+  color: var(--harvard-crimson);   /* Harvard red */
   text-transform: uppercase;
-  padding-top: 4px; /* Visual alignment */
+  padding-top: 2px;
 }
+
 
 /* REMOVE OLD HEADERS */
 .site-bar {
