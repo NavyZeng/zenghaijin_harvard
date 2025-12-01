@@ -180,12 +180,8 @@ a:hover { text-decoration: underline; }
 /* FIX PUBLICATION FIGURE SIZE */
 .pub-item {
   display: grid;
-  grid-template-columns: 120px 1fr;  /* smaller fixed thumbnail column */
-  gap: 16px;
-  padding: 16px 0;
-  border-top: 1px solid var(--border-light);
-  align-items: start;               /* keeps images from stretching */
-}
+  grid-template-columns: 130px 1fr;
+
 
 .pub-thumb {
   width: 120px;                     /* fix wrapper width */
@@ -195,12 +191,24 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border-light);
 }
 
-.pub-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;                /* important → prevents giant images */
-  display: block;
+.pub-thumb {
+  width: 130px;
+  height: 130px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
 }
+
+.pub-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 
 
 .pub-main-title {
