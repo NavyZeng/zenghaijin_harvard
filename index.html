@@ -54,14 +54,12 @@ a:hover { text-decoration: underline; }
   gap: 18px;
 }
 
-/* Large Harvard shield (dominant element) */
 .harvard-shield img {
-  height: 60px;        
+  height: 60px;
   width: auto;
   display: block;
 }
 
-/* Harvard wordmark (smaller) */
 .harvard-wordmark {
   font-family: var(--harvard-serif);
   font-size: 34px;
@@ -72,13 +70,57 @@ a:hover { text-decoration: underline; }
   padding-top: 4px;
 }
 
-/* REMOVE OLD HEADERS */
-.site-bar,
-.page-header {
+/* Remove only old top bar (NOT your name header) */
+.site-bar {
   display: none !important;
 }
 
-/* Add spacing below new header */
+/* ============================================================
+   PERSONAL HEADER (RESTORED)
+============================================================ */
+
+.page-header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.page-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.page-header .shield img {
+  width: 70px;
+  height: auto;
+}
+
+.header-name {
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  margin: 0;
+  color: var(--harvard-dark);
+}
+
+.header-title {
+  font-size: 1.1rem;
+  color: var(--harvard-crimson);
+  margin-top: 4px;
+}
+
+.header-affil {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+
 .main-wrapper {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -88,10 +130,7 @@ a:hover { text-decoration: underline; }
   gap: 32px;
 }
 
-/* ============================================================
-   SIDEBAR
-============================================================ */
-
+/* SIDEBAR */
 .sidebar {
   border-right: 1px solid var(--border-light);
   padding-right: 20px;
@@ -118,10 +157,7 @@ a:hover { text-decoration: underline; }
   margin-bottom: 4px;
 }
 
-/* ============================================================
-   CONTENT
-============================================================ */
-
+/* CONTENT */
 .content section {
   margin-bottom: 32px;
 }
@@ -135,7 +171,7 @@ a:hover { text-decoration: underline; }
 }
 
 /* ============================================================
-   PUBLICATIONS
+   PUBLICATIONS — FIX THUMBNAILS (smaller, uniform)
 ============================================================ */
 
 .publications-list {
@@ -145,21 +181,29 @@ a:hover { text-decoration: underline; }
 
 .pub-item {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 120px 1fr;
   gap: 16px;
   padding: 16px 0;
   border-top: 1px solid var(--border-light);
+  align-items: start;
 }
 
 .pub-item:last-child {
   border-bottom: 1px solid var(--border-light);
 }
 
+.pub-thumb {
+  width: 120px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+}
+
 .pub-thumb img {
   width: 100%;
-  max-width: 150px;
-  border: 1px solid var(--border-light);
-  border-radius: 4px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .pub-main-title {
@@ -187,10 +231,7 @@ a:hover { text-decoration: underline; }
   font-weight: 500;
 }
 
-/* ============================================================
-   FOOTER
-============================================================ */
-
+/* FOOTER */
 .site-footer {
   text-align: center;
   padding: 20px;
@@ -200,10 +241,7 @@ a:hover { text-decoration: underline; }
   font-size: 0.85rem;
 }
 
-/* ============================================================
-   RESPONSIVE LAYOUT
-============================================================ */
-
+/* RESPONSIVE */
 @media (max-width: 850px) {
   .main-wrapper {
     grid-template-columns: 1fr;
@@ -221,15 +259,12 @@ a:hover { text-decoration: underline; }
     flex-direction: column;
     text-align: center;
   }
-
   .harvard-wordmark {
     font-size: 28px;
   }
-
   .harvard-shield img {
     height: 48px;
   }
-
   .pub-item {
     grid-template-columns: 1fr;
   }
@@ -241,20 +276,20 @@ a:hover { text-decoration: underline; }
 <body>
 
 <!-- ============================================================
-     HARVARD.EDU HEADER (FINAL)
+     HARVARD HEADER
 ============================================================ -->
 <div class="harvard-header">
   <div class="harvard-header-inner">
-
     <div class="harvard-shield">
       <img src="assets/img/Harvard.png" alt="Harvard Shield">
     </div>
-
     <div class="harvard-wordmark">Harvard University</div>
-
   </div>
 </div>
 
+<!-- ============================================================
+     PERSONAL HEADER (RESTORED)
+============================================================ -->
 <header class="page-header">
   <div class="page-header-inner">
     <div class="shield">
@@ -270,6 +305,7 @@ a:hover { text-decoration: underline; }
     </div>
   </div>
 </header>
+
 
 
 <!-- ============================================================
