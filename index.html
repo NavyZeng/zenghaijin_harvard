@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Haijin Zeng | Harvard Medical School</title>
 
+  <!-- FULL CSS -->
   <style>
-
 /* ============================================================
    ROOT VARIABLES
 ============================================================ */
@@ -14,8 +14,10 @@
   --harvard-dark: #2b2b2b;
   --border-light: #dddddd;
   --max-width: 1100px;
+  --harvard-serif: "Crimson Text", Georgia, serif;
 }
 
+/* Reset / base */
 * { box-sizing: border-box; }
 
 body {
@@ -27,104 +29,68 @@ body {
   line-height: 1.55;
 }
 
+a {
+  color: var(--harvard-crimson);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
 /* ============================================================
-   BEAUTIFUL CLEAN HARVARD TOP BAR (NO RED BACKGROUND)
+   HARVARD.EDU HEADER — OFFICIAL STYLE
 ============================================================ */
 
 .harvard-header {
-  background: white;                          /* CLEAN WHITE */
   width: 100%;
-  color: var(--harvard-dark);
-  border-bottom: 2px solid #A41034;           /* thin crimson underline */
+  background: white;
+  border-bottom: 2px solid var(--harvard-crimson);
 }
 
 .harvard-header-inner {
   max-width: 1150px;
   margin: 0 auto;
-  padding: 18px 24px;
+  padding: 22px 20px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
-/* Elegant shield frame */
-.harvard-shield-box {
-  background: white;
-  padding: 4px;
-  border: 2px solid var(--harvard-crimson);   /* subtle outline */
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  height: 48px;
-}
-
-/* Shield itself */
-.harvard-shield-box img {
-  height: 34px;
+/* Large Harvard shield (dominant element) */
+.harvard-shield img {
+  height: 60px;        
   width: auto;
+  display: block;
 }
 
-/* Harvard University text */
+/* Harvard wordmark (smaller) */
 .harvard-wordmark {
-  font-family: "Crimson Text", Georgia, serif;
-  font-size: 42px;
+  font-family: var(--harvard-serif);
+  font-size: 34px;
   font-weight: 700;
+  letter-spacing: 0.015em;
+  color: var(--harvard-dark);
   text-transform: uppercase;
-  letter-spacing: 0.035em;
-  display: flex;
-  align-items: center;
-  color: var(--harvard-dark);
+  padding-top: 4px;
 }
 
-/* ============================================================
-   FACULTY HEADER
-============================================================ */
-
-.faculty-header {
-  background: white;
-  border-bottom: 1px solid var(--border-light);
-  padding: 32px 0;
+/* REMOVE OLD HEADERS */
+.site-bar,
+.page-header {
+  display: none !important;
 }
 
-.faculty-header-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.faculty-name {
-  font-family: Georgia, serif;
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: var(--harvard-dark);
-  margin-bottom: 10px;
-}
-
-.faculty-title {
-  font-size: 1.2rem;
-  color: var(--harvard-crimson);
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.faculty-affil {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.55;
-}
-
-/* ============================================================
-   MAIN LAYOUT
-============================================================ */
-
+/* Add spacing below new header */
 .main-wrapper {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 40px 20px;
   display: grid;
   grid-template-columns: 260px 1fr;
-  gap: 40px;
+  gap: 32px;
 }
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
 
 .sidebar {
   border-right: 1px solid var(--border-light);
@@ -133,30 +99,92 @@ body {
 
 .profile-photo img {
   width: 100%;
-  max-width: 240px;
-  border-radius: 6px;
+  max-width: 220px;
   border: 1px solid var(--border-light);
+  border-radius: 6px;
   display: block;
-  margin: 0 auto 25px;
+  margin: 0 auto 20px;
+}
+
+.sidebar-block {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
 }
 
 .sidebar-label {
   text-transform: uppercase;
   font-size: 0.75rem;
   color: #777;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
+/* ============================================================
+   CONTENT
+============================================================ */
+
 .content section {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .content h2 {
   font-family: Georgia, serif;
-  font-size: 1.45rem;
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
   border-bottom: 1px solid var(--border-light);
-  padding-bottom: 6px;
-  margin-bottom: 10px;
+}
+
+/* ============================================================
+   PUBLICATIONS
+============================================================ */
+
+.publications-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.pub-item:last-child {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pub-thumb img {
+  width: 100%;
+  max-width: 150px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+}
+
+.pub-main-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--harvard-dark);
+  margin-bottom: 4px;
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.pub-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 4px 0;
+}
+
+.pub-links a {
+  color: var(--harvard-crimson);
+  margin-right: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 /* ============================================================
@@ -164,23 +192,61 @@ body {
 ============================================================ */
 
 .site-footer {
-  margin-top: 50px;
-  padding: 25px;
   text-align: center;
-  color: #777;
-  font-size: 0.9rem;
+  padding: 20px;
+  margin-top: 40px;
   border-top: 1px solid var(--border-light);
+  color: #777;
+  font-size: 0.85rem;
 }
 
+/* ============================================================
+   RESPONSIVE LAYOUT
+============================================================ */
+
+@media (max-width: 850px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .harvard-header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .harvard-wordmark {
+    font-size: 28px;
+  }
+
+  .harvard-shield img {
+    height: 48px;
+  }
+
+  .pub-item {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 
+
 <body>
 
+<!-- ============================================================
+     HARVARD.EDU HEADER (FINAL)
+============================================================ -->
 <div class="harvard-header">
   <div class="harvard-header-inner">
 
-    <div class="harvard-shield-box">
+    <div class="harvard-shield">
       <img src="assets/img/Harvard.png" alt="Harvard Shield">
     </div>
 
@@ -190,27 +256,13 @@ body {
 </div>
 
 
-<!-- ============================================================
-     FACULTY HEADER
-============================================================ -->
-<header class="faculty-header">
-  <div class="faculty-header-inner">
-    <h1 class="faculty-name">Haijin Zeng, Ph.D.</h1>
-    <div class="faculty-title">Research Fellow</div>
-    <div class="faculty-affil">
-      Psychiatry Neuroimaging Laboratory (PNL)<br>
-      Brigham and Women’s Hospital<br>
-      Harvard Medical School
-    </div>
-  </div>
-</header>
 
 <!-- ============================================================
-     MAIN WRAPPER
+     MAIN WRAPPER LAYOUT
 ============================================================ -->
 <div class="main-wrapper">
 
-  <!-- SIDEBAR -->
+  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="profile-photo">
       <img src="assets/img/doraemon.png" alt="Profile Photo">
@@ -224,12 +276,10 @@ body {
     </div>
   </aside>
 
-
-
   <!-- CONTENT -->
   <main class="content">
 
-    <!-- BIO -->
+    <!-- Bio -->
     <section>
       <h2>Biography</h2>
       <p>
@@ -239,7 +289,8 @@ body {
         <strong>Harvard Medical School</strong>.
       </p>
       <p>
-        I received my Ph.D. in Engineering from <a href="https://www.imec-int.com/en" target="_blank">imec</a> & Ghent University, 
+        I received my Ph.D. in Engineering from 
+        <a href="https://www.imec-int.com/en" target="_blank">imec</a> & Ghent University, 
         where I was awarded the <strong>imec PhD Excellence Award</strong>.
         My work bridges computational imaging, foundation model,  
         and large-scale neuroimaging analysis.
