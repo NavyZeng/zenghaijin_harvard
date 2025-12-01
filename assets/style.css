@@ -80,6 +80,47 @@ a:hover { text-decoration: underline; }
   gap: 32px;
 }
 
+/* PERSONAL HEADER (your name section) */
+.page-header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.page-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.page-header .shield img {
+  width: 80px;     /* smaller than Harvard.edu shield */
+  height: auto;
+}
+
+.header-name {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  margin: 0;
+  color: var(--harvard-dark);
+}
+
+.header-title {
+  font-size: 1.1rem;
+  color: var(--harvard-crimson);
+  margin-top: 4px;
+}
+
+.header-affil {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+
+
 /* ============================================================
    SIDEBAR
 ============================================================ */
