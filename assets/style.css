@@ -1,3 +1,6 @@
+/* ============================================================
+   ROOT VARIABLES
+============================================================ */
 :root {
   --harvard-crimson: #A41034;
   --harvard-dark: #2b2b2b;
@@ -5,10 +8,7 @@
   --max-width: 1100px;
 }
 
-/* Reset / base */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -19,6 +19,9 @@ body {
   line-height: 1.55;
 }
 
+/* ============================================================
+   LINKS
+============================================================ */
 a {
   color: var(--harvard-crimson);
   text-decoration: none;
@@ -27,53 +30,111 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Harvard.edu style top bar */
-.harvard-bar {
-  background: #A41034;
+/* ============================================================
+   HARVARD OFFICIAL TOP BANNER
+============================================================ */
+.harvard-topbar {
   width: 100%;
-  color: #fff;
+  background: #A41034; /* Harvard Crimson */
   border-bottom: 1px solid #7A0019;
+  color: white;
 }
 
-.harvard-bar-inner {
+.harvard-topbar-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 6px 20px;
+  padding: 8px 24px;
   display: flex;
   align-items: center;
-  gap: 10px; /* smaller spacing like official */
+  gap: 16px;
 }
 
-/* Crimson square behind shield — MUCH smaller now */
+/* Shield box */
 .harvard-logo-box {
   background: #7A0019;
-  padding: 2px;  /* small padding like harvard.edu */
-  border-radius: 3px;
+  padding: 3px;
+  border-radius: 4px;
+  height: 30px;
   display: flex;
   align-items: center;
-  height: 26px;  /* enforces the small official height */
 }
 
-/* The actual shield — this is the key fix */
 .harvard-logo-box img {
-  height: 22px;   /* Harvard.edu shield height */
+  height: 24px;  /* OFFICIAL shield height */
+  width: auto;
+  display: block;
+}
+
+/* Wordmark container */
+.harvard-wordmark-container {
+  display: flex;
+  align-items: center;
+}
+
+.harvard-wordmark-svg {
+  height: 26px;  /* matches Harvard.edu */
   width: auto;
   display: block;
 }
 
 
+/* ============================================================
+   HARVARD FACULTY-STYLE HEADER
+============================================================ */
+.faculty-header {
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+  padding: 32px 0;
+}
 
-/* MAIN GRID */
+.faculty-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.faculty-header-text {
+  text-align: left;
+}
+
+.faculty-name {
+  font-family: Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: #2b2b2b;
+}
+
+.faculty-title {
+  font-size: 1.2rem;
+  color: var(--harvard-crimson);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.faculty-affil {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   MAIN GRID LAYOUT
+============================================================ */
 .main-wrapper {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 24px;
   display: grid;
-  grid-template-columns: 270px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 40px;
 }
 
-/* SIDEBAR */
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
 .sidebar {
   border-right: 1px solid var(--border-light);
   padding-right: 20px;
@@ -81,7 +142,7 @@ a:hover {
 
 .profile-photo img {
   width: 100%;
-  max-width: 240px;         /* Bigger but clean */
+  max-width: 240px;
   display: block;
   border-radius: 6px;
   border: 1px solid var(--border-light);
@@ -89,19 +150,22 @@ a:hover {
 }
 
 .sidebar-block {
-  margin-bottom: 22px;
-  font-size: 0.92rem;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
 }
 
 .sidebar-label {
   text-transform: uppercase;
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #777;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
-/* CONTENT */
+
+/* ============================================================
+   CONTENT SECTIONS
+============================================================ */
 .content section {
   margin-bottom: 40px;
 }
@@ -115,7 +179,10 @@ a:hover {
   border-bottom: 1px solid var(--border-light);
 }
 
-/* PUBLICATIONS */
+
+/* ============================================================
+   PUBLICATIONS
+============================================================ */
 .publications-list {
   list-style: none;
   padding: 0;
@@ -124,7 +191,7 @@ a:hover {
 
 .pub-item {
   display: grid;
-  grid-template-columns: 160px 1fr;    /* Larger thumbnails */
+  grid-template-columns: 160px 1fr;
   gap: 20px;
   padding: 20px 0;
   border-top: 1px solid var(--border-light);
@@ -136,7 +203,7 @@ a:hover {
 
 .pub-thumb img {
   width: 100%;
-  max-width: 160px;                /* Larger */
+  max-width: 160px;
   border-radius: 4px;
   border: 1px solid var(--border-light);
 }
@@ -165,8 +232,14 @@ a:hover {
   font-size: 0.85rem;
   color: var(--harvard-crimson);
 }
+.pub-links a:hover {
+  text-decoration: underline;
+}
 
-/* FOOTER */
+
+/* ============================================================
+   FOOTER
+============================================================ */
 .site-footer {
   margin-top: 50px;
   padding: 25px;
@@ -176,11 +249,15 @@ a:hover {
   border-top: 1px solid var(--border-light);
 }
 
-/* RESPONSIVE */
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
 @media (max-width: 850px) {
   .main-wrapper {
     grid-template-columns: 1fr;
   }
+
   .sidebar {
     border-right: none;
     border-bottom: 1px solid var(--border-light);
@@ -190,13 +267,9 @@ a:hover {
 }
 
 @media (max-width: 600px) {
-  .page-header-inner {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .shield img {
-    width: 95px;
+  .faculty-name {
+    font-size: 1.9rem;
   }
 
   .profile-photo img {
