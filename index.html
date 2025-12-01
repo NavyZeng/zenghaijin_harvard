@@ -34,47 +34,52 @@ a {
 a:hover { text-decoration: underline; }
 
 /* ============================================================
-   HARVARD.EDU — EXACT TOP BANNER
+   CLEAN BEAUTIFUL HARVARD TOP BAR (NO RED BACKGROUND)
 ============================================================ */
 
 .harvard-header {
-  background: #A41034; 
+  background: #ffffff;                       /* clean white */
   width: 100%;
-  color: white;
-  border-bottom: 1px solid #7A0019;
+  color: var(--harvard-dark);
+  border-bottom: 2px solid #A41034;          /* elegant Harvard underline */
 }
 
 .harvard-header-inner {
   max-width: 1150px;
   margin: 0 auto;
-  padding: 12px 24px;
+  padding: 16px 24px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
 
+/* clean shield box */
 .harvard-shield-box {
-  background: #7A0019;
-  padding: 6px;
-  border-radius: 4px;
-  height: 58px;
+  background: white;
+  padding: 4px;
+  border: 2px solid #A41034;                 /* crimson outline */
+  border-radius: 6px;
+  height: 48px;
   display: flex;
   align-items: center;
 }
 
+/* smaller elegant shield */
 .harvard-shield-box img {
-  height: 46px;
+  height: 36px;
   width: auto;
   display: block;
 }
 
+/* beautiful large wordmark */
 .harvard-wordmark {
   font-family: "Crimson Text", Georgia, serif;
-  font-size: 34px;
+  font-size: 42px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  height: 58px;
+  letter-spacing: 0.035em;
+  color: #2b2b2b;
+  height: 48px;
   display: flex;
   align-items: center;
 }
