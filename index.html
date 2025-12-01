@@ -6,6 +6,10 @@
 
   <!-- FULL CSS (INLINE to avoid cache / path issues) -->
   <style>
+
+    /* ============================================================
+       ROOT VARIABLES
+    ============================================================ */
     :root {
       --harvard-crimson: #A41034;
       --harvard-dark: #2b2b2b;
@@ -24,76 +28,113 @@
       line-height: 1.55;
     }
 
-    /* Top bar */
-    .site-bar {
-      border-bottom: 1px solid var(--border-light);
-      background: #ffffff;
-    }
-    .site-bar-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 12px 20px;
-    }
-    .site-bar-title {
-      font-family: Georgia, serif;
-      font-size: 1.1rem;
-      color: var(--harvard-crimson);
-      letter-spacing: 0.05em;
-    }
-    .site-bar-subtitle {
-      font-size: 0.85rem;
-      color: #666;
+
+    /* ============================================================
+       HARVARD OFFICIAL TOP BANNER
+       (Shield + Wordmark SVG)
+    ============================================================ */
+    .harvard-topbar {
+      width: 100%;
+      background: #A41034; /* Harvard Crimson */
+      border-bottom: 1px solid #7A0019;
+      color: white;
     }
 
-    /* Header */
-    .page-header {
-      border-bottom: 1px solid var(--border-light);
-      background: #ffffff;
-    }
-    .page-header-inner {
+    .harvard-topbar-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 24px 20px;
+      padding: 8px 24px;
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
     }
 
-    .shield img {
-      width: 70px;
-      height: auto;
+    /* Shield box */
+    .harvard-logo-box {
+      background: #7A0019;
+      padding: 3px;
+      border-radius: 4px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .harvard-logo-box img {
+      height: 24px;  /* official scale */
+      width: auto;
       display: block;
     }
 
-    .header-text { flex: 1; }
-    .header-name {
-      font-family: Georgia, serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--harvard-dark);
-      margin: 0;
-    }
-    .header-title {
-      color: var(--harvard-crimson);
-      font-weight: 600;
-      margin: 4px 0;
-    }
-    .header-affil {
-      color: #666;
-      margin: 4px 0;
+    /* Wordmark */
+    .harvard-wordmark-container {
+      display: flex;
+      align-items: center;
     }
 
-    /* MAIN GRID (critical!) */
+    .harvard-wordmark-svg {
+      height: 26px;   /* official height */
+      width: auto;
+      display: block;
+    }
+
+
+    /* ============================================================
+       HARVARD FACULTY-STYLE HEADER
+    ============================================================ */
+    .faculty-header {
+      background: white;
+      border-bottom: 1px solid var(--border-light);
+      padding: 32px 0;
+    }
+
+    .faculty-header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .faculty-header-text {
+      text-align: left;
+    }
+
+    .faculty-name {
+      font-family: Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+      color: #2b2b2b;
+    }
+
+    .faculty-title {
+      font-size: 1.2rem;
+      color: var(--harvard-crimson);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .faculty-affil {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.55;
+    }
+
+
+    /* ============================================================
+       MAIN GRID
+    ============================================================ */
     .main-wrapper {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 30px 20px;
+      padding: 40px 24px;
       display: grid;
       grid-template-columns: 260px 1fr;
-      gap: 32px;
+      gap: 40px;
     }
 
-    /* Sidebar */
+
+    /* ============================================================
+       SIDEBAR
+    ============================================================ */
     .sidebar {
       border-right: 1px solid var(--border-light);
       padding-right: 20px;
@@ -101,103 +142,145 @@
 
     .profile-photo img {
       width: 100%;
-      max-width: 220px;
-      border: 1px solid var(--border-light);
-      border-radius: 6px;
+      max-width: 240px;
       display: block;
-      margin: 0 auto 20px;
+      border-radius: 6px;
+      border: 1px solid var(--border-light);
+      margin: 0 auto 25px;
     }
 
     .sidebar-block {
       margin-bottom: 20px;
       font-size: 0.9rem;
     }
+
     .sidebar-label {
       text-transform: uppercase;
       font-size: 0.75rem;
+      font-weight: 600;
       color: #777;
       margin-bottom: 4px;
     }
 
-    /* Content */
+
+    /* ============================================================
+       CONTENT AREA
+    ============================================================ */
     .content section {
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
+
     .content h2 {
       font-family: Georgia, serif;
-      font-size: 1.35rem;
-      margin-bottom: 8px;
-      padding-bottom: 4px;
+      font-size: 1.45rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
       border-bottom: 1px solid var(--border-light);
     }
 
-    /* Publications */
+
+    /* ============================================================
+       PUBLICATIONS
+    ============================================================ */
     .publications-list {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
+
     .pub-item {
       display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 16px;
-      padding: 16px 0;
+      grid-template-columns: 160px 1fr;
+      gap: 20px;
+      padding: 20px 0;
       border-top: 1px solid var(--border-light);
     }
+
     .pub-item:last-child {
       border-bottom: 1px solid var(--border-light);
     }
+
     .pub-thumb img {
       width: 100%;
-      max-width: 150px;
-      border: 1px solid var(--border-light);
+      max-width: 160px;
       border-radius: 4px;
+      border: 1px solid var(--border-light);
     }
+
     .pub-main-title {
       font-weight: 600;
       font-size: 1rem;
       color: var(--harvard-dark);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
+
     .pub-authors {
-      font-size: 0.9rem;
-      color: #777;
+      font-size: 0.92rem;
+      color: #666;
     }
+
     .pub-meta {
       font-size: 0.85rem;
       color: #777;
-      margin: 4px 0;
-    }
-    .pub-links a {
-      color: var(--harvard-crimson);
-      margin-right: 8px;
-      font-size: 0.85rem;
-      font-weight: 500;
+      margin: 6px 0;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      border-top: 1px solid var(--border-light);
-      color: #777;
+    .pub-links a {
+      margin-right: 10px;
+      font-weight: 500;
       font-size: 0.85rem;
+      color: var(--harvard-crimson);
+      text-decoration: none;
     }
+    .pub-links a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer {
+      margin-top: 50px;
+      padding: 25px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid var(--border-light);
+    }
+
   </style>
 </head>
 
 <body>
 
-<!-- Harvard.edu Style Top Bar -->
-<div class="harvard-bar">
-  <div class="harvard-bar-inner">
+<!-- ============================================================
+     HARVARD TOP BAR (OFFICIAL STYLE)
+============================================================ -->
+<div class="harvard-topbar">
+  <div class="harvard-topbar-inner">
 
+    <!-- Shield -->
     <div class="harvard-logo-box">
       <img src="assets/img/Harvard.png" alt="Harvard Shield">
     </div>
 
-    <div class="harvard-bar-text">
-      <div class="harvard-bar-title">Harvard University</div>
-      <div class="harvard-bar-subtitle">Harvard Medical School · Mass General Brigham</div>
+    <!-- Official Wordmark SVG -->
+    <div class="harvard-wordmark-container">
+      <svg class="harvard-wordmark-svg"
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 415 52"
+           aria-hidden="true">
+        <text x="0" y="38"
+              font-family="Crimson Text, Georgia, serif"
+              font-size="40px"
+              font-weight="700"
+              fill="white"
+              letter-spacing="3px">
+          HARVARD UNIVERSITY
+        </text>
+      </svg>
     </div>
 
   </div>
@@ -205,28 +288,33 @@
 
 
 
-<!-- Header -->
-<header class="page-header">
-  <div class="page-header-inner">
-    <div class="shield">
-      <img src="assets/img/Harvard.png" alt="Harvard Shield">
+<!-- ============================================================
+     HARVARD FACULTY-STYLE HEADER
+============================================================ -->
+<header class="faculty-header">
+  <div class="faculty-header-inner">
+
+    <div class="faculty-header-text">
+      <h1 class="faculty-name">Haijin Zeng, Ph.D.</h1>
+      <div class="faculty-title">Research Fellow</div>
+      <div class="faculty-affil">
+        Psychiatry Neuroimaging Laboratory (PNL)<br>
+        Brigham and Women’s Hospital<br>
+        Harvard Medical School
+      </div>
     </div>
 
-    <div class="header-text">
-      <h1 class="header-name">Haijin Zeng, Ph.D.</h1>
-      <div class="header-title">Research Fellow</div>
-      <p class="header-affil">
-        Psychiatry Neuroimaging Laboratory (PNL), Brigham and Women’s Hospital<br>
-        Harvard Medical School
-      </p>
-    </div>
   </div>
 </header>
 
-<!-- MAIN WRAPPER (critical grid) -->
+
+
+<!-- ============================================================
+     MAIN WRAPPER
+============================================================ -->
 <div class="main-wrapper">
 
-  <!-- Sidebar -->
+  <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="profile-photo">
       <img src="assets/img/doraemon.png" alt="Profile Photo">
@@ -240,12 +328,12 @@
     </div>
   </aside>
 
+
+
   <!-- CONTENT -->
   <main class="content">
-    <!-- ⭐ YOUR FULL BIO, PUBLICATIONS, SERVICE, AWARDS, PERSONAL INFO -->
-    <!-- ⭐ I keep all your original content exactly as you posted -->
 
-    <!-- Bio -->
+    <!-- BIO -->
     <section>
       <h2>Biography</h2>
       <p>
@@ -267,6 +355,7 @@
         coma recovery, and neurodegeneration.
       </p>
     </section>
+
 
       <!-- Publications -->
       <section id="publications">
