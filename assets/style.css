@@ -26,52 +26,54 @@ a {
 a:hover { text-decoration: underline; }
 
 /* ============================================================
-   HARVARD HEADER (balanced version)
+   CLEAN HARVARD HEADER (WHITE, ELEGANT, BEAUTIFUL)
 ============================================================ */
 
 .harvard-header {
-  background: #A41034;
+  background: #ffffff;                    /* no red background */
   width: 100%;
-  color: white;
-  border-bottom: 1px solid #7A0019;
+  color: var(--harvard-dark);
+  border-bottom: 2px solid #A41034;       /* elegant crimson underline */
 }
 
 .harvard-header-inner {
   max-width: 1150px;
   margin: 0 auto;
-  padding: 10px 22px;
+  padding: 16px 24px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
-/* Crimson padded shield box */
+/* Elegant shield box – white with crimson border */
 .harvard-shield-box {
-  background: #7A0019;
-  padding: 5px;
-  border-radius: 4px;
-  height: 45px;
+  background: #ffffff;
+  padding: 4px;
+  border: 2px solid #A41034;             /* thin crimson frame */
+  border-radius: 6px;
+  height: 48px;                           /* balanced height */
   display: flex;
   align-items: center;
 }
 
-/* Shield image (balanced size) */
+/* Shield size tuned to match wordmark line height */
 .harvard-shield-box img {
-  height: 34px;
+  height: 36px;                           /* smaller, elegant */
   width: auto;
   display: block;
 }
 
-/* Larger Harvard wordmark */
+/* Large, beautiful Harvard wordmark */
 .harvard-wordmark {
   font-family: "Crimson Text", Georgia, serif;
-  font-size: 40px;
+  font-size: 42px;                        /* strong and beautiful */
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  height: 45px;
+  letter-spacing: 0.035em;
   display: flex;
   align-items: center;
+  height: 48px;
+  color: #2b2b2b;
 }
 
 /* ============================================================
