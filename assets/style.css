@@ -65,10 +65,10 @@ a:hover { text-decoration: underline; }
 }
 
 /* REMOVE OLD HEADERS */
-.site-bar,
-.page-header {
+.site-bar {
   display: none !important;
 }
+
 
 /* Add spacing below new header */
 .main-wrapper {
