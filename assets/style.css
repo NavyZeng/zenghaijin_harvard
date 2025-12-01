@@ -27,33 +27,58 @@ a:hover {
   text-decoration: underline;
 }
 
-/* TOP BAR (Harvard style, enlarged) */
-.site-bar {
-  border-bottom: 1px solid var(--border-light);
-  background: #ffffff;
+/* Top Harvard Bar – Harvard.edu style */
+.harvard-bar {
+  background: var(--harvard-crimson);
+  color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #7a0c29;
 }
 
-.site-bar-inner {
+.harvard-bar-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 20px 20px;   /* Larger */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.site-bar-title {
-  font-family: Georgia, serif;
-  font-size: 1.45rem;   /* BIGGER */
-  font-weight: 700;
-  color: var(--harvard-crimson);
-  letter-spacing: 0.03em;
+/* Crimson square logo wrapper */
+.harvard-logo-box {
+  background: #7a0c29; /* slightly darker shade like Harvard.edu */
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
 }
 
-.site-bar-subtitle {
+.harvard-logo-box img {
+  width: 40px; /* nearly identical to Harvard.edu shield size */
+  height: auto;
+  display: block;
+}
+
+/* Text area next to the shield */
+.harvard-bar-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.harvard-bar-title {
   font-size: 1.05rem;
-  color: #444;
-  margin-top: 4px;
+  font-family: Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
 }
 
-/* HEADER (with larger shield) */
+.harvard-bar-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Page header below (kept white like your existing design) */
 .page-header {
   border-bottom: 1px solid var(--border-light);
   background: #ffffff;
@@ -62,42 +87,18 @@ a:hover {
 .page-header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 35px 20px;          /* Increased height */
+  padding: 24px 20px;
   display: flex;
   align-items: center;
-  gap: 30px;                   /* Smooth spacing */
+  gap: 20px;
 }
 
 .shield img {
-  width: 110px;                /* Harvard-realistic size */
+  width: 70px;
   height: auto;
   display: block;
 }
 
-.header-text {
-  flex: 1;
-}
-
-.header-name {
-  font-family: Georgia, serif;
-  font-size: 2.6rem;           /* Balanced with the shield */
-  font-weight: 600;
-  color: var(--harvard-dark);
-  margin: 0;
-}
-
-.header-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--harvard-crimson);
-  margin-top: 8px;
-}
-
-.header-affil {
-  font-size: 1rem;
-  color: #555;
-  margin-top: 6px;
-}
 
 /* MAIN GRID */
 .main-wrapper {
