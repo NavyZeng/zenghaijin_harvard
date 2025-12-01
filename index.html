@@ -27,65 +27,57 @@ body {
   line-height: 1.55;
 }
 
-a {
-  color: var(--harvard-crimson);
-  text-decoration: none;
-}
-a:hover { text-decoration: underline; }
-
 /* ============================================================
-   CLEAN BEAUTIFUL HARVARD TOP BAR (NO RED BACKGROUND)
+   BEAUTIFUL CLEAN HARVARD TOP BAR (NO RED BACKGROUND)
 ============================================================ */
 
 .harvard-header {
-  background: #ffffff;                       /* clean white */
+  background: white;                          /* CLEAN WHITE */
   width: 100%;
   color: var(--harvard-dark);
-  border-bottom: 2px solid #A41034;          /* elegant Harvard underline */
+  border-bottom: 2px solid #A41034;           /* thin crimson underline */
 }
 
 .harvard-header-inner {
   max-width: 1150px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
-/* clean shield box */
+/* Elegant shield frame */
 .harvard-shield-box {
   background: white;
   padding: 4px;
-  border: 2px solid #A41034;                 /* crimson outline */
+  border: 2px solid var(--harvard-crimson);   /* subtle outline */
   border-radius: 6px;
-  height: 48px;
   display: flex;
   align-items: center;
+  height: 48px;
 }
 
-/* smaller elegant shield */
+/* Shield itself */
 .harvard-shield-box img {
-  height: 36px;
+  height: 34px;
   width: auto;
-  display: block;
 }
 
-/* beautiful large wordmark */
+/* Harvard University text */
 .harvard-wordmark {
   font-family: "Crimson Text", Georgia, serif;
   font-size: 42px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.035em;
-  color: #2b2b2b;
-  height: 48px;
   display: flex;
   align-items: center;
+  color: var(--harvard-dark);
 }
 
 /* ============================================================
-   HARVARD FACULTY-STYLE HEADER
+   FACULTY HEADER
 ============================================================ */
 
 .faculty-header {
@@ -104,8 +96,8 @@ a:hover { text-decoration: underline; }
   font-family: Georgia, serif;
   font-size: 2.4rem;
   font-weight: 600;
-  margin-bottom: 10px;
   color: var(--harvard-dark);
+  margin-bottom: 10px;
 }
 
 .faculty-title {
@@ -122,7 +114,7 @@ a:hover { text-decoration: underline; }
 }
 
 /* ============================================================
-   MAIN GRID
+   MAIN LAYOUT
 ============================================================ */
 
 .main-wrapper {
@@ -134,10 +126,6 @@ a:hover { text-decoration: underline; }
   gap: 40px;
 }
 
-/* ============================================================
-   SIDEBAR
-============================================================ */
-
 .sidebar {
   border-right: 1px solid var(--border-light);
   padding-right: 20px;
@@ -146,61 +134,30 @@ a:hover { text-decoration: underline; }
 .profile-photo img {
   width: 100%;
   max-width: 240px;
-  display: block;
   border-radius: 6px;
   border: 1px solid var(--border-light);
+  display: block;
   margin: 0 auto 25px;
 }
 
-/* ============================================================
-   CONTENT + PUBLICATIONS
-============================================================ */
+.sidebar-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #777;
+  margin-bottom: 5px;
+}
 
-.content section { margin-bottom: 40px; }
+.content section {
+  margin-bottom: 40px;
+}
 
 .content h2 {
   font-family: Georgia, serif;
   font-size: 1.45rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-light);
   padding-bottom: 6px;
-  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 10px;
 }
-
-.publications-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pub-item {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 20px;
-  padding: 20px 0;
-  border-top: 1px solid var(--border-light);
-}
-.pub-item:last-child {
-  border-bottom: 1px solid var(--border-light);
-}
-
-.pub-thumb img {
-  width: 100%;
-  max-width: 160px;
-  border-radius: 4px;
-  border: 1px solid var(--border-light);
-}
-
-.pub-main-title {
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--harvard-dark);
-  margin-bottom: 6px;
-}
-
-.pub-authors { font-size: 0.92rem; color: #666; }
-.pub-meta    { font-size: 0.85rem; color: #777; margin: 6px 0; }
-.pub-links a { color: var(--harvard-crimson); font-weight: 500; margin-right: 10px; }
 
 /* ============================================================
    FOOTER
@@ -209,9 +166,9 @@ a:hover { text-decoration: underline; }
 .site-footer {
   margin-top: 50px;
   padding: 25px;
-  font-size: 0.9rem;
   text-align: center;
   color: #777;
+  font-size: 0.9rem;
   border-top: 1px solid var(--border-light);
 }
 
@@ -221,7 +178,7 @@ a:hover { text-decoration: underline; }
 <body>
 
 <!-- ============================================================
-     HARVARD.EDU TOP HEADER
+     CLEAN HARVARD TOP BAR (NO RED BACKGROUND)
 ============================================================ -->
 <div class="harvard-header">
   <div class="harvard-header-inner">
@@ -235,28 +192,20 @@ a:hover { text-decoration: underline; }
   </div>
 </div>
 
-
 <!-- ============================================================
-     FACULTY STYLE PROFILE HEADER
+     FACULTY HEADER
 ============================================================ -->
-
 <header class="faculty-header">
   <div class="faculty-header-inner">
-
-    <div class="faculty-header-text">
-      <h1 class="faculty-name">Haijin Zeng, Ph.D.</h1>
-      <div class="faculty-title">Research Fellow</div>
-      <div class="faculty-affil">
-        Psychiatry Neuroimaging Laboratory (PNL)<br>
-        Brigham and Women’s Hospital<br>
-        Harvard Medical School
-      </div>
+    <h1 class="faculty-name">Haijin Zeng, Ph.D.</h1>
+    <div class="faculty-title">Research Fellow</div>
+    <div class="faculty-affil">
+      Psychiatry Neuroimaging Laboratory (PNL)<br>
+      Brigham and Women’s Hospital<br>
+      Harvard Medical School
     </div>
-
   </div>
 </header>
-
-
 
 <!-- ============================================================
      MAIN WRAPPER
