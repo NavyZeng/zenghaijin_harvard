@@ -26,14 +26,14 @@ a {
 a:hover { text-decoration: underline; }
 
 /* ============================================================
-   CLEAN HARVARD HEADER (WHITE, ELEGANT, BEAUTIFUL)
+   BEAUTIFUL CLEAN HARVARD TOP BAR (WHITE + CRIMSON ACCENTS)
 ============================================================ */
 
 .harvard-header {
-  background: #ffffff;                    /* no red background */
+  background: #ffffff;                       /* clean white top bar */
   width: 100%;
   color: var(--harvard-dark);
-  border-bottom: 2px solid #A41034;       /* elegant crimson underline */
+  border-bottom: 2px solid #A41034;          /* elegant crimson underline */
 }
 
 .harvard-header-inner {
@@ -42,42 +42,42 @@ a:hover { text-decoration: underline; }
   padding: 16px 24px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 18px;                                  /* balanced spacing */
 }
 
-/* Elegant shield box – white with crimson border */
+/* Shield container */
 .harvard-shield-box {
-  background: #ffffff;
+  background: white;
   padding: 4px;
-  border: 2px solid #A41034;             /* thin crimson frame */
+  border: 2px solid #A41034;                  /* subtle Harvard frame */
   border-radius: 6px;
-  height: 48px;                           /* balanced height */
+  height: 48px;
   display: flex;
   align-items: center;
 }
 
-/* Shield size tuned to match wordmark line height */
+/* Shield size */
 .harvard-shield-box img {
-  height: 36px;                           /* smaller, elegant */
+  height: 36px;                                /* elegant shield */
   width: auto;
   display: block;
 }
 
-/* Large, beautiful Harvard wordmark */
+/* Wordmark */
 .harvard-wordmark {
   font-family: "Crimson Text", Georgia, serif;
-  font-size: 42px;                        /* strong and beautiful */
+  font-size: 42px;                             /* visually dominant */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.035em;
+  height: 48px;
   display: flex;
   align-items: center;
-  height: 48px;
-  color: #2b2b2b;
+  color: var(--harvard-dark);
 }
 
 /* ============================================================
-   FACULTY HEADER (below the crimson banner)
+   FACULTY HEADER (Name + Position + Affiliations)
 ============================================================ */
 
 .faculty-header {
@@ -114,7 +114,7 @@ a:hover { text-decoration: underline; }
 }
 
 /* ============================================================
-   MAIN PAGE LAYOUT
+   MAIN PAGE LAYOUT (Sidebar + Content)
 ============================================================ */
 
 .main-wrapper {
@@ -158,7 +158,7 @@ a:hover { text-decoration: underline; }
 }
 
 /* ============================================================
-   CONTENT AREA
+   CONTENT HEADERS
 ============================================================ */
 
 .content section {
@@ -191,6 +191,7 @@ a:hover { text-decoration: underline; }
   padding: 20px 0;
   border-top: 1px solid var(--border-light);
 }
+
 .pub-item:last-child {
   border-bottom: 1px solid var(--border-light);
 }
