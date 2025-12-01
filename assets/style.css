@@ -135,24 +135,31 @@ a:hover { text-decoration: underline; }
   padding: 0;
 }
 
+/* FIX PUBLICATION FIGURE SIZE */
 .pub-item {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 120px 1fr;  /* smaller fixed thumbnail column */
   gap: 16px;
   padding: 16px 0;
   border-top: 1px solid var(--border-light);
+  align-items: start;               /* keeps images from stretching */
 }
 
-.pub-item:last-child {
-  border-bottom: 1px solid var(--border-light);
+.pub-thumb {
+  width: 120px;                     /* fix wrapper width */
+  height: 90px;                     /* add fixed height for consistency */
+  overflow: hidden;                 /* crop tall figures */
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
 }
 
 .pub-thumb img {
   width: 100%;
-  max-width: 150px;
-  border: 1px solid var(--border-light);
-  border-radius: 4px;
+  height: 100%;
+  object-fit: cover;                /* important → prevents giant images */
+  display: block;
 }
+
 
 .pub-main-title {
   font-weight: 600;
