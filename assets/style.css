@@ -27,76 +27,64 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Top Harvard Bar – Harvard.edu style */
+/* Harvard.edu style top bar */
 .harvard-bar {
-  background: var(--harvard-crimson);
-  color: #fff;
+  background: #A41034; /* official Harvard crimson */
   width: 100%;
-  border-bottom: 1px solid #7a0c29;
+  color: #fff;
+  border-bottom: 1px solid #7A0019;
 }
 
 .harvard-bar-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 6px 20px; /* closer to Harvard.edu */
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
-/* Crimson square logo wrapper */
+/* Crimson square behind the shield */
 .harvard-logo-box {
-  background: #7a0c29; /* slightly darker shade like Harvard.edu */
-  padding: 6px;
+  background: #7A0019; /* Harvard.edu darker shade */
+  padding: 4px;        /* smaller, clean */
   border-radius: 4px;
   display: flex;
   align-items: center;
 }
 
 .harvard-logo-box img {
-  width: 40px; /* nearly identical to Harvard.edu shield size */
+  width: 32px;   /* Harvard.edu size ~30–32px */
   height: auto;
   display: block;
 }
 
-/* Text area next to the shield */
+/* Typography like Harvard.edu */
 .harvard-bar-text {
   display: flex;
   flex-direction: column;
+  line-height: 1.2;
 }
 
+/* Harvard.edu title style */
 .harvard-bar-title {
-  font-size: 1.05rem;
-  font-family: Georgia, serif;
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase; /* same as official site */
+  margin: 0;
+  padding: 0;
   color: #fff;
 }
 
+/* Subtitle, cleaner + smaller */
 .harvard-bar-subtitle {
-  font-size: 0.85rem;
-  opacity: 0.9;
-}
-
-/* Page header below (kept white like your existing design) */
-.page-header {
-  border-bottom: 1px solid var(--border-light);
-  background: #ffffff;
-}
-
-.page-header-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 24px 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.shield img {
-  width: 70px;
-  height: auto;
-  display: block;
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 0.80rem;
+  opacity: 0.95;
+  margin: 0;
+  padding: 0;
 }
 
 
