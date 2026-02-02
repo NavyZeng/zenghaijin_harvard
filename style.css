@@ -1,0 +1,370 @@
+/* ============================================================
+   ROOT VARIABLES
+============================================================ */
+:root {
+  --harvard-crimson: #A41034;
+  --harvard-dark: #2b2b2b;
+  --border-light: #dddddd;
+  --max-width: 1100px;
+  --harvard-serif: "Crimson Text", Georgia, serif;
+}
+
+/* Reset / base */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--harvard-crimson);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ============================================================
+   HARVARD.EDU HEADER — OFFICIAL STYLE
+============================================================ */
+
+/* Inspired by the MIT EECS header layout (logo lockup left, actions right) */
+
+.harvard-header {
+  width: 100% !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+.harvard-header-inner {
+  max-width: 1150px !important;
+  margin: 0 auto !important;
+  padding: 14px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+}
+
+.harvard-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  text-decoration: none !important;
+  min-width: 0 !important;
+}
+
+.harvard-brand-logos {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex: 0 0 auto !important;
+}
+
+.harvard-brand-logos img.harvard-logo,
+.harvard-brand-logos img.hms-logo {
+  height: 40px !important;
+  width: auto !important;
+  display: block !important;
+}
+
+.harvard-brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.05 !important;
+  min-width: 0 !important;
+}
+
+.harvard-brand-title {
+  font-family: var(--harvard-serif) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  color: #111 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.harvard-brand-subtitle {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  color: #444 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.harvard-header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex: 0 0 auto !important;
+}
+
+.harvard-header-link {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  color: #111 !important;
+}
+
+.harvard-header-link:hover {
+  color: var(--harvard-crimson) !important;
+  text-decoration: none !important;
+}
+
+.harvard-header-menu {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 9px 12px !important;
+  border: 1px solid var(--border-light) !important;
+  background: #ffffff !important;
+  color: #111 !important;
+  cursor: pointer !important;
+}
+
+.harvard-header-menu:hover {
+  border-color: var(--harvard-crimson) !important;
+  color: var(--harvard-crimson) !important;
+}
+
+
+
+/* REMOVE OLD HEADERS */
+.site-bar {
+  display: none !important;
+}
+
+
+/* Add spacing below new header */
+.main-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+}
+
+/* PERSONAL HEADER (your name section) */
+.page-header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.page-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.page-header .shield img {
+  width: 80px;     /* smaller than Harvard.edu shield */
+  height: auto;
+}
+
+.header-name {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  margin: 0;
+  color: var(--harvard-dark);
+}
+
+.header-title {
+  font-size: 1.1rem;
+  color: var(--harvard-crimson);
+  margin-top: 4px;
+}
+
+.header-affil {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
+
+.sidebar {
+  border-right: 1px solid var(--border-light);
+  padding-right: 20px;
+}
+
+.profile-photo img {
+  width: 100%;
+  max-width: 220px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.sidebar-block {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.sidebar-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+/* ============================================================
+   CONTENT
+============================================================ */
+
+.content section {
+  margin-bottom: 32px;
+}
+
+.content h2 {
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ============================================================
+   PUBLICATIONS
+============================================================ */
+
+.publications-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* FIX PUBLICATION FIGURE SIZE */
+.pub-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+
+
+.pub-thumb {
+  width: 120px;                     /* fix wrapper width */
+  height: 90px;                     /* add fixed height for consistency */
+  overflow: hidden;                 /* crop tall figures */
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+}
+
+.pub-thumb {
+  width: 130px;
+  height: 130px;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.pub-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+.pub-main-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--harvard-dark);
+  margin-bottom: 4px;
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.pub-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 4px 0;
+}
+
+.pub-links a {
+  color: var(--harvard-crimson);
+  margin-right: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-light);
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT
+============================================================ */
+
+@media (max-width: 850px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .harvard-header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .harvard-brand {
+    width: 100%;
+  }
+
+  .harvard-brand-logos img.harvard-logo,
+  .harvard-brand-logos img.hms-logo {
+    height: 36px;
+  }
+
+  .harvard-brand-title {
+    font-size: 18px;
+  }
+
+  .harvard-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .pub-item {
+    grid-template-columns: 1fr;
+  }
+}

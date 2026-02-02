@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Haijin Zeng | Harvard Medical School</title>
+
+  <!-- FULL CSS -->
+  <style>
+/* ============================================================
+   ROOT VARIABLES
+============================================================ */
+:root {
+  --harvard-crimson: #A41034;
+  --harvard-dark: #2b2b2b;
+  --border-light: #dddddd;
+  --max-width: 1100px;
+  --harvard-serif: "Crimson Text", Georgia, serif;
+}
+
+/* Reset / base */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--harvard-crimson);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ============================================================
+   HARVARD.EDU HEADER — OFFICIAL STYLE
+============================================================ */
+
+/* Inspired by the MIT EECS header layout (logo lockup left, actions right) */
+.harvard-header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.harvard-header-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* Brand lockup (Harvard + HMS) */
+.harvard-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.harvard-brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.harvard-brand-logos img.harvard-logo,
+.harvard-brand-logos img.hms-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.harvard-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  min-width: 0;
+}
+
+.harvard-brand-title {
+  font-family: var(--harvard-serif);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #111;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.harvard-brand-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #444;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right-side actions (Contact + Menu) */
+.harvard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
+}
+
+.harvard-header-link {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #111;
+}
+
+.harvard-header-link:hover {
+  color: var(--harvard-crimson);
+  text-decoration: none;
+}
+
+.harvard-header-menu {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 9px 12px;
+  border: 1px solid var(--border-light);
+  background: #ffffff;
+  color: #111;
+  cursor: pointer;
+}
+
+.harvard-header-menu:hover {
+  border-color: var(--harvard-crimson);
+  color: var(--harvard-crimson);
+}
+
+/* Remove only old top bar (NOT your name header) */
+
+.site-bar {
+  display: none !important;
+}
+
+/* ============================================================
+   PERSONAL HEADER (RESTORED)
+============================================================ */
+
+.page-header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.page-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.page-header .shield img {
+  width: 70px;
+  height: auto;
+}
+
+.header-name {
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  margin: 0;
+  color: var(--harvard-dark);
+}
+
+.header-title {
+  font-size: 1.1rem;
+  color: var(--harvard-crimson);
+  margin-top: 4px;
+}
+
+.header-affil {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+
+.main-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  border-right: 1px solid var(--border-light);
+  padding-right: 20px;
+}
+
+.profile-photo img {
+  width: 100%;
+  max-width: 220px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.sidebar-block {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.sidebar-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+/* CONTENT */
+.content section {
+  margin-bottom: 32px;
+}
+
+.content h2 {
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ============================================================
+   PUBLICATIONS — FIX THUMBNAILS (smaller, uniform)
+============================================================ */
+
+.publications-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;  /* smaller fixed column */
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-light);
+}
+
+
+
+.pub-item:last-child {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pub-thumb {
+  width: 120px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+}
+
+.pub-thumb img {
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;      /* ensures full image always visible */
+  max-width: 140px;            /* sync with grid column */
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+}
+
+
+.pub-main-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--harvard-dark);
+  margin-bottom: 4px;
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.pub-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 4px 0;
+}
+
+.pub-links a {
+  color: var(--harvard-crimson);
+  margin-right: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-light);
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .harvard-header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .harvard-brand {
+    width: 100%;
+  }
+
+  .harvard-brand-logos img.harvard-logo,
+  .harvard-brand-logos img.hms-logo {
+    height: 36px;
+  }
+
+  .harvard-brand-title {
+    font-size: 18px;
+  }
+
+  .harvard-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .pub-item {
+    grid-template-columns: 1fr;
+  }
+}
+  </style>
+</head>
+
+
+<body>
+
+<!-- ============================================================
+     HARVARD HEADER
+============================================================ -->
+<div class="harvard-header">
+  <div class="harvard-header-inner">
+    <a class="harvard-brand" href="#">
+      <span class="harvard-brand-logos">
+        <img class="harvard-logo" src="assets/img/Harvard.png" alt="Harvard University">
+        <img class="hms-logo" src="assets/img/HMS.svg" alt="Harvard Medical School">
+      </span>
+      <span class="harvard-brand-text">
+        <span class="harvard-brand-title">Harvard University</span>
+        <span class="harvard-brand-subtitle">Harvard Medical School</span>
+      </span>
+    </a>
+
+    <div class="harvard-header-actions">
+      <a class="harvard-header-link" href="mailto:haijin.zeng2018@gmail.com">Contact</a>
+      <button class="harvard-header-menu" type="button" aria-label="Menu">Menu</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PERSONAL HEADER (RESTORED)
+============================================================ -->
+<header class="page-header">
+  <div class="page-header-inner">
+
+    <!-- HMS SHIELD -->
+    <div class="shield">
+      <img src="assets/img/HMS.svg" alt="Harvard Medical School Shield">
+    </div>
+
+    <div class="header-text">
+      <h1 class="header-name">Haijin Zeng, Ph.D.</h1>
+      <div class="header-title">Research Fellow</div>
+      <p class="header-affil">
+        Psychiatry Neuroimaging Laboratory (PNL), Mass General Brigham<br>
+        Harvard Medical School
+      </p>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<!-- ============================================================
+     MAIN WRAPPER LAYOUT
+============================================================ -->
+<div class="main-wrapper">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="profile-photo">
+      <img src="assets/img/doraemon.png" alt="Profile Photo">
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">Contact</div>
+      <p>Email: <a href="mailto:haijin.zeng2018@gmail.com">haijin.zeng2018@gmail.com</a></p>
+      <p>Harvard Catalyst: <a href="https://connects.catalyst.harvard.edu/profiles/display/Person/226284" target="_blank">vCard</a></p>
+      <p>Google Scholar: <a href="https://scholar.google.com/citations?user=e9f3XqcAAAAJ" target="_blank">Profile</a></p>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- Bio -->
+    <section>
+      <h2>Biography</h2>
+      <p>
+        I am a Research Fellow at Psychiatry Neuroimaging Laboratory (PNL), Departments of Psychiatry and Radiology, <strong>Harvard University</strong>.
+      </p>
+      <p>
+        I received my Ph.D. in Engineering from 
+        <a href="https://www.imec-int.com/en" target="_blank">imec</a> & Ghent University, 
+        where I was awarded the <strong>imec PhD Excellence Award</strong>.
+        My work bridges computational imaging, foundation model,  
+        and large-scale neuroimaging analysis.
+      </p>
+      <p>
+        My current research focuses on developing robust computational models 
+        for structural and functional MRI, tensor-based modeling, large-scale 
+        histology-MRI integration, and AI-driven imaging biomarkers for brain injury, 
+        coma recovery, and neurodegeneration.
+      </p>
+    </section>
+
+
+      <!-- Publications -->
+      <section id="publications">
+        <h2>Selected Publications</h2>
+
+        <ul class="publications-list">
+           <!-- 12 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/DJRD.png" alt="DJRD">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Inheriting Bayer's Legacy: Joint Remosaicing and Denoising for Quad Bayer Image Sensor
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>*, K. Feng*, W. Philips
+              </div>
+              <div class="pub-meta">International Journal of Computer Vision (IJCV).</div>
+              <div class="pub-links">
+                <a href="https://rdcu.be/dJpck" target="_blank">Paper</a>
+              </div>
+            </div>
+          </li>
+
+
+          
+          <!-- 1 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/PSR-SCI.png" alt="PSR-SCI">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Spectral Compressive Imaging via Unmixing-driven Subspace Diffusion Refinement
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>*, B. Sun*, Y. Chen, J. Su, Y. Xu
+              </div>
+              <div class="pub-meta">ICLR, Spotlight (4.7% acceptance rate).</div>
+              <div class="pub-links">
+                <a href="https://openreview.net/pdf?id=Q150eWkQ4I" target="_blank">Paper</a>
+                <a href="https://github.com/SMARK2022/PSR-SCI" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/VLU-Net.png" alt="VLU-Net">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Vision-Language Gradient Descent-driven All-in-One Deep Unfolding Networks
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>*, X. Wang*, Y. Chen, J. Su, J. Liu
+              </div>
+              <div class="pub-meta">CVPR.</div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/pdf/2503.16930" target="_blank">Paper</a>
+                <a href="https://github.com/xianggkl/VLU-Net" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 3 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/BMTNet.png" alt="BMTNet">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Binarized Mamba-Transformer for Lightweight Quad Bayer HybridEVS Demosaicing
+              </div>
+              <div class="pub-authors">
+                S. Zhou*, <strong>H. Zeng*</strong>, J. Su, J. Liu
+              </div>
+              <div class="pub-meta">CVPR.</div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/pdf/2503.16134?" target="_blank">Paper</a>
+                <a href="https://github.com/Clausy9/BMTNet" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 4 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/OTLRM.png" alt="OTLRM">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                OTLRM: Orthogonal Learning-based Low-Rank Metric for Multi-Dimensional Inverse Problems
+              </div>
+              <div class="pub-authors">
+                X. Wang, <strong>H. Zeng</strong>&dagger;, J. Chen
+              </div>
+              <div class="pub-meta">AAAI.</div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/pdf/2412.11165" target="_blank">Paper</a>
+                <a href="https://github.com/xianggkl/OTLRM" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 5 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/mambaSCI.png" alt="MambaSCI">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                MambaSCI: Efficient Mamba-UNet for Quad-Bayer Patterned Video Snapshot Compressive Imaging
+              </div>
+              <div class="pub-authors">
+                Z. Pan*, <strong>H. Zeng*</strong>, K. Zhang
+              </div>
+              <div class="pub-meta">NeurIPS.</div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/pdf/2410.14214" target="_blank">Paper</a>
+                <a href="https://github.com/PAN083/MambaSCI" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 6 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/snapshot_hsi_demo.png" alt="WeFAT">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Wavelength-Embedding-guided Filter-Array Transformer for Spectral Demosaicing
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>, H. Luong, W. Philips
+              </div>
+              <div class="pub-meta">ECCV.</div>
+              <div class="pub-links">
+                <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02182.pdf" target="_blank">Paper</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 7 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/SAH-SCI.png" alt="SAH-SCI">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                SAH-SCI: Self-Supervised Adapter for Efficient Hyperspectral Snapshot Compressive Imaging
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>*, Y. Liu*, J. Su
+              </div>
+              <div class="pub-meta">ECCV.</div>
+              <div class="pub-links">
+                <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/08105.pdf" target="_blank">Paper</a>
+                <a href="https://github.com/lyuxi/SAH-SCI" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 8 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/diffsci.png" alt="DiffSCI">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                DiffSCI: Zero-Shot Snapshot Compressive Imaging via Iterative Spectral Diffusion Model
+              </div>
+              <div class="pub-authors">
+                Z. Pan*, <strong>H. Zeng*</strong>, K. Zhang
+              </div>
+              <div class="pub-meta">CVPR.</div>
+              <div class="pub-links">
+                <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Pan_DiffSCI_Zero-Shot_Snapshot_Compressive_Imaging_via_Iterative_Spectral_Diffusion_Model_CVPR_2024_paper.pdf" target="_blank">Paper</a>
+                <a href="https://github.com/PAN083/DiffSCI" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 9 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/diff_unmix.png" alt="Diff-Unmix">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Unmixing Diffusion for Self-Supervised Hyperspectral Image Denoising
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>, J. Cao, W. Philips
+              </div>
+              <div class="pub-meta">CVPR.</div>
+              <div class="pub-links">
+                <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zeng_Unmixing_Diffusion_for_Self-Supervised_Hyperspectral_Image_Denoising_CVPR_2024_paper.pdf" target="_blank">Paper</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 10 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/DPU.png" alt="DPU">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Dual Prior Unfolding for Snapshot Compressive Imaging
+              </div>
+              <div class="pub-authors">
+                J. Zhang*, <strong>H. Zeng*</strong>, J. Cao
+              </div>
+              <div class="pub-meta">CVPR.</div>
+              <div class="pub-links">
+                <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Dual_Prior_Unfolding_for_Snapshot_Compressive_Imaging_CVPR_2024_paper.pdf" target="_blank">Paper</a>
+                <a href="https://github.com/ZhangJC-2k/DPU" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 11 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/SSR.png" alt="SSR">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Improving Spectral Snapshot Reconstruction with Spectral-Spatial Rectification
+              </div>
+              <div class="pub-authors">
+                J. Zhang, <strong>H. Zeng</strong>, J. Cao
+              </div>
+              <div class="pub-meta">CVPR.</div>
+              <div class="pub-links">
+                <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Improving_Spectral_Snapshot_Reconstruction_with_Spectral-Spatial_Rectification_CVPR_2024_paper.pdf" target="_blank">Paper</a>
+                <a href="https://github.com/ZhangJC-2k/SSR" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 13 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/EI_demosaic.png" alt="Unsupervised Spectral Demosaicing">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Unsupervised Spectral Demosaicing with Lightweight Spectral Attention Networks
+              </div>
+              <div class="pub-authors">
+                K. Feng*, <strong>H. Zeng*</strong>, Y. Zhao
+              </div>
+              <div class="pub-meta">IEEE Transactions on Image Processing.</div>
+              <div class="pub-links">
+                <a href="https://ieeexplore.ieee.org/document/10443845" target="_blank">Paper</a>
+                <a href="https://github.com/fkmajiji/Unsupervised-Spectral-Demosaicing" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 14 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/tensor_tnnls.png" alt="TNNLS Tensor Completion">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Tensor Completion using Bilayer Multi-mode Low-rank Prior and Total Variation
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>, S. Huang, Y. Chen
+              </div>
+              <div class="pub-meta">IEEE Transactions on Neural Networks and Learning Systems.</div>
+              <div class="pub-links">
+                <a href="https://ieeexplore.ieee.org/document/10128755" target="_blank">Paper</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 15 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/MCTF.png" alt="MCTF">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Multi-mode Core Tensor Factorization based Low-Rankness and Its Applications to Tensor Completion
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>, J. Xue
+              </div>
+              <div class="pub-meta">IEEE Transactions on Multimedia.</div>
+              <div class="pub-links">
+                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9927348" target="_blank">Paper</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 16 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/L12SSTV.png" alt="L12-SSTV">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Hyperspectral Image Restoration via Global L<sub>1-2</sub> Spatial-Spectral Total Variation Regularized Local Low-Rank Tensor Recovery
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>, J. Ning
+              </div>
+              <div class="pub-meta">IEEE Transactions on Geoscience and Remote Sensing.</div>
+              <div class="pub-links">
+                <a href="https://ieeexplore.ieee.org/abstract/document/9144237" target="_blank">Paper</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 17 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/LRATM.png" alt="LRATM">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Enhanced Nonconvex Low-Rank Approximation of Tensor Multi-modes for Tensor Completion
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>, Y. Chen
+              </div>
+              <div class="pub-meta">IEEE Transactions on Computational Imaging.</div>
+              <div class="pub-links">
+                <a href="https://ieeexplore.ieee.org/abstract/document/9333624" target="_blank">Paper</a>
+                <a href="https://github.com/NavyZeng/LRATM" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 18 -->
+          <li class="pub-item">
+            <div class="pub-thumb">
+              <img src="assets/img/DPLRTA.png" alt="DPLRTA">
+            </div>
+            <div>
+              <div class="pub-main-title">
+                Hyperspectral Image Restoration via CNN Denoiser Prior Regularized Low-Rank Tensor Recovery
+              </div>
+              <div class="pub-authors">
+                <strong>H. Zeng</strong>, J. Ning
+              </div>
+              <div class="pub-meta">
+                Computer Vision and Image Understanding.
+              </div>
+              <div class="pub-links">
+                <a href="https://www.sciencedirect.com/science/article/pii/S1077314220300710" target="_blank">Paper</a>
+                <a href="https://github.com/NavyZeng/DPLRTA" target="_blank">Code</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Service -->
+      <section id="service">
+        <h2>Service</h2>
+        <p><strong>Membership</strong></p>
+        <ul>
+          <li>IEEE, Member</li>
+        </ul>
+
+        <p><strong>Journal Reviewer (selected)</strong></p>
+        <ul>
+          <li>Journal of Computational and Applied Mathematics</li>
+          <li>IEEE Transactions on Image Processing (TIP)</li>
+          <li>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
+          <li>IEEE Transactions on Geoscience and Remote Sensing (TGRS)</li>
+          <li>IEEE Transactions on Computational Imaging (TCI)</li>
+          <li>IEEE JSTARS, IEEE Signal Processing Letters, Neurocomputing, Scientific Reports, and others.</li>
+        </ul>
+
+        <p><strong>Conference Reviewer (selected)</strong></p>
+        <ul>
+          <li>ICLR, ICML, NeurIPS, CVPR, ECCV, ICCV</li>
+          <li>AISTATS, AAAI, ACM MM</li>
+          <li>ICME, ICASSP, IJCNN</li>
+        </ul>
+      </section>
+
+      <!-- Awards -->
+      <section id="awards">
+        <h2>Awards</h2>
+        <ul>
+          <li><strong>imec PhD Excellence Award</strong>, imec (2 per year across all global imec research institutes).</li>
+          <li>Third place, <strong>CVPR 2024 Mobile Intelligent Photography and Imaging (MIPI) Challenge</strong>.</li>
+          <li>Third place, <strong>ECCV 2022 MIPI Challenge</strong>.</li>
+          <!-- <li>National Scholarship (top 2%, Ministry of Education, China).</li>
+          <li>Top-Ten Distinguished Graduate Student (Northwest A&amp;F University).</li>
+          <li>Multiple prizes in national mathematical modeling and mathematics competitions.</li> -->
+        </ul>
+      </section>
+
+      <!-- Personal -->
+      <section id="more">
+        <h2>Personal</h2>
+        <p>
+          Outside of research, I enjoy badminton and middle- to long-distance running. I also like
+          exploring how computational imaging ideas can be communicated visually — from camera
+          photography to scientific figures and data stories.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      &copy; Haijin Zeng · This page is hosted on GitHub Pages.
+    </div>
+  </footer>
+
+</body>
+</html>
